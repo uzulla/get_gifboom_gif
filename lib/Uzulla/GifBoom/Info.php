@@ -2,8 +2,6 @@
 
 namespace Uzulla\GifBoom;
 
-use SebastianBergmann\Exporter\Exception;
-
 class Info
 {
     /**
