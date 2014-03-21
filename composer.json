@@ -1,0 +1,19 @@
+{
+    "name": "uzulla/getgifboomgif",
+    "description": "get gifboom gif direct url",
+    "type": "tool",
+    "keywords": [
+        "gifboom",
+        "tool"
+    ],
+    "require":{
+        "fabpot/goutte": "*",
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-0": {"Uzulla\\GifBoom\\": "lib/"}
+    },
+    "bin": [
+        "getgifboomgif"
+    ]
+}

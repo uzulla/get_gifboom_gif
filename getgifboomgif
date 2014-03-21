@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+// strict error bailout
+function strict_error_handler($errno, $errstr, $errfile, $errline)
+{
+    die ("STRICT: {$errno} {$errstr} {$errfile} {$errline} ".PHP_EOL);
+}
+set_error_handler("strict_error_handler");
+
+// autload
+require "vendor/autoload.php";
+
+// usage
+if(!isset($argv[1])){
+  echo "usage: getgifboomgif (gifboom url|gifboom item id)";
+  die;
+}
+
+// exec
+try{
+    $url = \Uzulla\GifBoom\Info::getGifUrl($argv[1]);
+    echo $url.PHP_EOL;
+}catch(\Exception $e){
+    die("error, cause:".$e->getMessage().PHP_EOL);
+}
+
